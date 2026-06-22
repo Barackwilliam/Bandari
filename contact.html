@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Bandari Route Logistics</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo"><b>Bandari Route</b><span>Freight &amp; Logistics</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="corridors.html">Corridors</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="tracking.html">Track Shipment</a>
+      <a href="industries.html">Industries</a>
+      <a href="clients.html">Clients</a>
+      <a href="about.html">About</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="page-head dark">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h1 style="font-size:clamp(34px,5vw,58px);">Tell us what's on the manifest.</h1>
+    <p class="mt-16" style="max-width:560px;">Send cargo details and destination — we'll respond with a routing plan and rate within one working day. Use the form or contact the head office directly.</p>
+    <div class="crumb">Home <span>/</span> Contact</div>
+  </div>
+</div>
+
+<!-- CONTACT GRID -->
+<section class="bg-paper">
+  <div class="wrap grid-2" style="gap:80px; align-items:flex-start;">
+
+    <!-- QUOTE FORM -->
+    <div class="reveal">
+      <span class="waypoint">REQUEST A QUOTE</span>
+      <h2 class="mt-16" style="font-size:28px;">Quote request</h2>
+      <p class="mt-12 small">Fill in the cargo details below. The more specific you are about cargo type, weight and destination, the faster we can respond with an accurate rate.</p>
+
+      <form id="quoteForm" class="mt-32" onsubmit="handleQuote(event)" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">Your Name</label>
+            <input type="text" id="fname" placeholder="Amina Mwangi" required>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Company name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" placeholder="+255 7XX XXX XXX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="origin">Origin</label>
+            <input type="text" id="origin" placeholder="e.g. Dar es Salaam Port">
+          </div>
+          <div class="field">
+            <label for="dest">Destination</label>
+            <input type="text" id="dest" placeholder="e.g. Lusaka, Zambia">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cargo">Cargo Type</label>
+            <select id="cargo">
+              <option value="">Select cargo type</option>
+              <option>Copper concentrate / minerals</option>
+              <option>Agricultural produce</option>
+              <option>Construction materials</option>
+              <option>Consumer goods / FMCG</option>
+              <option>Fuel / petroleum products</option>
+              <option>Humanitarian / NGO cargo</option>
+              <option>Heavy / abnormal load</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="weight">Estimated Weight</label>
+            <input type="text" id="weight" placeholder="e.g. 28 tonnes / 1x 40ft FCL">
+          </div>
+        </div>
+        <div class="field">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" placeholder="Unusual dimensions, time constraints, hazmat classification, COMESA requirements, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid mt-24">Send Quote Request →</button>
+      </form>
+
+      <div id="formSuccess" style="display:none; margin-top:32px; padding:24px; background:var(--teal); color:var(--sand);">
+        <h3 style="color:var(--sand); font-size:19px;">Request received.</h3>
+        <p class="mt-8 small" style="color:rgba(243,234,216,.8);">We'll respond within one working day with a routing plan and rate. If it's urgent, call +255 754 000 000 directly.</p>
+      </div>
+    </div>
+
+    <!-- OFFICE INFO -->
+    <div class="reveal">
+      <span class="waypoint">HEAD OFFICE</span>
+      <h2 class="mt-16" style="font-size:28px;">Dar es Salaam</h2>
+      <div class="dl mt-24">
+        <div class="dl-row"><span class="k">Address</span><span>Kurasini Road, Kurasini Ward<br>Temeke District, Dar es Salaam</span></div>
+        <div class="dl-row"><span class="k">Phone</span><span>+255 754 000 000</span></div>
+        <div class="dl-row"><span class="k">WhatsApp</span><span>+255 754 000 000</span></div>
+        <div class="dl-row"><span class="k">Email</span><span>cargo@bandariroute.co.tz</span></div>
+        <div class="dl-row"><span class="k">Office hours</span><span>Mon–Fri 07:30–18:00<br>Sat 08:00–13:00</span></div>
+        <div class="dl-row"><span class="k">24hr emergency</span><span>+255 754 000 111</span></div>
+      </div>
+
+      <!-- MAP EMBED (OpenStreetMap, Kurasini Dar es Salaam) -->
+      <div class="photo-frame mt-32" style="height:280px;">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=39.2800%2C-6.8500%2C39.3200%2C-6.8100&layer=mapnik&marker=-6.8300%2C39.3000"
+          style="width:100%;height:100%;border:none;"
+          title="Bandari Route Office Location — Kurasini, Dar es Salaam"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="photo-cap">Kurasini, Temeke District — 4km from port Gate 1</p>
+
+      <div class="mt-32">
+        <span class="waypoint">BORDER OFFICES</span>
+        <div class="dl mt-16">
+          <div class="dl-row"><span class="k">Tunduma</span><span>+255 755 001 001</span></div>
+          <div class="dl-row"><span class="k">Kabanga</span><span>+255 755 001 002</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK CONTACT STRIP -->
+<section class="bg-teal dark section-tight">
+  <div class="wrap grid-3">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--ochre-light);">For new quotes</div>
+      <h3 class="mt-12" style="font-size:18px;">cargo@bandariroute.co.tz</h3>
+      <p class="mt-8 small">Standard enquiries — cargo details, destination, weight.</p>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--ochre-light);">For border issues</div>
+      <h3 class="mt-12" style="font-size:18px;">+255 754 000 111</h3>
+      <p class="mt-8 small">24-hour emergency line — active delays, border holds, truck breakdowns.</p>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--ochre-light);">For tracking queries</div>
+      <h3 class="mt-12" style="font-size:18px;"><a href="tracking.html" style="color:var(--paper);">Use the tracker →</a></h3>
+      <p class="mt-8 small">Waybill number gives live status at every checkpoint.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <b style="color:var(--paper); font-family:var(--display); font-size:21px;">Bandari Route</b>
+        <p class="small mt-16" style="max-width:280px;">Freight forwarding, customs clearance and inland haulage from the Port of Dar es Salaam to six countries across the region.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="clients.html">Clients</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="services.html">Freight Forwarding</a>
+        <a href="services.html">Customs Clearing</a>
+        <a href="fleet.html">Fleet &amp; Haulage</a>
+        <a href="corridors.html">Trade Corridors</a>
+      </div>
+      <div>
+        <h4>Head Office</h4>
+        <li>Kurasini, Dar es Salaam</li>
+        <li>Tanzania</li>
+        <li>+255 754 000 000</li>
+        <li>cargo@bandariroute.co.tz</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year"></span> Bandari Route Logistics Ltd.</span>
+      <span>Built for the Dar es Salaam – Central &amp; Southern Corridor trade route.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script>
+function handleQuote(e){
+  e.preventDefault();
+  document.getElementById('quoteForm').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('formSuccess').scrollIntoView({ behavior:'smooth', block:'nearest' });
+}
+</script>
+</body>
+</html>
